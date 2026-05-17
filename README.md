@@ -1,6 +1,6 @@
 # System Design Notes
 
-This repository contains my notes and learnings from studying **System Design** and **Scalable Systems**.
+This repository contains my notes and learnings from studying **System Design** and [**Scalable Systems**](ScalableSystem.md).
 
 The goal of this repo is to:
 

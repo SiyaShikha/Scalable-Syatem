@@ -19,7 +19,7 @@ Example:
 
 ### Horizontal Scaling
 
-Increase system capacity by adding multiple servers behind a load balancer.
+Increase system capacity by adding multiple servers behind a [load balancer](LoadBalancer.md).
 
 - Better fault tolerance
 - Easier to scale
@@ -45,31 +45,6 @@ Common Solutions:
 - Redis
 - Distributed cache
 - JWT tokens
-
----
-
-## Load Balancer Strategies
-
-### Round Robin
-
-Requests are distributed sequentially across servers.
-
-Example:
-
-- Request 1 → Server A
-- Request 2 → Server B
-- Request 3 → Server C
-
----
-
-### Partitioning
-
-Requests are routed based on a specific rule.
-
-Example:
-
-- Users A–M → Server 1
-- Users N–Z → Server 2
 
 ---
 
@@ -101,157 +76,39 @@ Using only one database server is risky because if it fails, the entire applicat
 
 ## Database Replication Strategies
 
-### Cold Standby
+[Database Replication Strategies](./DbReplication.md)
 
-The backup system remains offline until the primary system fails.
-
-Problem:
-
-- Data after the last backup may be lost
-
----
-
-### Warm Standby
-
-A continuously running replica exists in another location.
-
-- Faster recovery than cold standby
-- Some replication delay may exist
+- Cold Standby
+- Warm Standby
+- Hot Standby
+- Multi-Primary
+- **Sharding**
 
 ---
 
-### Hot Standby
+# Cloud Solutions:
 
-Real-time replication between primary and standby databases.
-
-- Minimal data loss
-- High availability
+Cloud solutions ([Cloud Storage & Data Lakes](./CloudSolutions.md)) provide scalable and cost-effective storage and processing capabilities for large volumes of data across distributed systems.
 
 ---
 
-### Multi-Primary
+# Database ACID Properties
 
-Application writes directly to multiple database servers.
+[ACID Principles](./AcidProperties.md)
 
-Benefits:
-
-- High availability
-- Better write scalability
-
-Challenges:
-
-- Conflict resolution
-- Increased complexity
+- Atomicity
+- Consistency
+- Isolation
+- Durability
 
 ---
 
-## Sharding
+# Database CAP Theorem
 
-Splits a large database into smaller independent databases called _shards_.
-
-Benefits:
-
-- Improves scalability
-- Reduces load on a single database
-- Each shard can have its own backup and replication
-
-Example:
-
-- Users 1–1M → Shard A
-- Users 1M–2M → Shard B
-
----
-
-# Cloud Solutions: Cloud Storage & Data Lakes
-
-A Data Lake stores massive amounts of structured and unstructured data.
-
-Common Solutions:
-
-- AWS S3
-- Azure Data Lake Storage
-- Google Cloud Storage
-
-Use Cases:
-
-- Analytics
-- Big data processing
-- Machine learning
-
----
-
-# ACID Properties
-
-## Atomicity
-
-Either the entire transaction succeeds or the entire transaction fails.
-
-Example:
-
-- Money deducted from one account must also be added to another account.
-
----
-
-## Consistency
-
-Database rules and constraints must always remain valid.
-
-- All database rules are enforced, or the entire transaction is rolled back
-
-Example:
-
-- No invalid foreign key references
-
----
-
-## Isolation
-
-Transactions running simultaneously should not interfere with each other.
-
-Example:
-
-- One transaction should not read incomplete data from another transaction
-
----
-
-## Durability
-
-Once committed, data remains saved even after crashes or power failures.
-
----
-
-# CAP Theorem
+[CAP Theorem](./CAPTheorem.md)
 
 A distributed system can guarantee only two out of the following three properties at the same time:
 
-## Consistency
-
-Do I get back what I just wrote immediately?
-
-- Every read receives the latest written data
-
----
-
-## Availability
-
-Can the system continue working even if some nodes fail?
-
-- The system continues to respond even if some nodes are down
-
----
-
-## Partition Tolerance
-
-Can the system continue operating despite network failures?
-
-- The system continues operating even if communication between nodes breaks
-
----
-
-## Practical Insight
-
-In distributed systems, **Partition Tolerance** is usually mandatory.  
-Therefore, systems often choose between:
-
-- **CP Systems** → Prioritize Consistency
-- **AP Systems** → Prioritize Availability
+- Consistency
+- Availability
+- Partition Tolerence
