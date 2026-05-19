@@ -1,5 +1,11 @@
 # Database Replication Strategies
 
+- Cold Standby
+- Warm Standby
+- Hot Standby
+- Multi-Primary
+- Sharding
+
 ## Cold Standby
 
 The backup system remains offline until the primary system fails.
@@ -58,3 +64,15 @@ Example:
 
 - Users 1–1M → Shard A
 - Users 1M–2M → Shard B
+
+<img src = "./resource/Sharding.png" height = "400" width = "80%">
+
+## Cassandra
+
+- a NoSQL distributed database
+- Unlike traditional relational databases, Cassandra is built to scale horizontally very efficiently.
+- No master server
+- Every node is equal
+- Any node can handle reads and writes
+
+<img src = "./resource/cassandra.png" height = "400" width = "60%">

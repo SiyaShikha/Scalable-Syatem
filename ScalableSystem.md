@@ -40,12 +40,6 @@ Why?
 - Any request can go to any server
 - Improves scalability and reliability
 
-Common Solutions:
-
-- Redis
-- Distributed cache
-- JWT tokens
-
 ---
 
 ## Serverless Services
@@ -78,17 +72,11 @@ Using only one database server is risky because if it fails, the entire applicat
 
 [Database Replication Strategies](./DbReplication.md)
 
-- Cold Standby
-- Warm Standby
-- Hot Standby
-- Multi-Primary
-- **Sharding**
-
 ---
 
 # Cloud Solutions:
 
-Cloud solutions ([Cloud Storage & Data Lakes](./CloudSolutions.md)) provide scalable and cost-effective storage and processing capabilities for large volumes of data across distributed systems.
+[Cloud Storage & Data Lakes](./CloudSolutions.md)
 
 ---
 
@@ -96,19 +84,43 @@ Cloud solutions ([Cloud Storage & Data Lakes](./CloudSolutions.md)) provide scal
 
 [ACID Principles](./AcidProperties.md)
 
-- Atomicity
-- Consistency
-- Isolation
-- Durability
-
 ---
 
 # Database CAP Theorem
 
 [CAP Theorem](./CAPTheorem.md)
 
-A distributed system can guarantee only two out of the following three properties at the same time:
+---
 
-- Consistency
-- Availability
-- Partition Tolerence
+# Caching
+
+[Caching](./Caching.md)
+
+---
+
+# Resiliency
+
+- Secondaries should spread across multiple racks, availability zones and regions
+- You need to balance budget vs availability. Not every system warrants this
+- Provisioning a new server from an offsite backup might be good enough
+
+---
+
+# Scaling the Data
+
+A Service Level Agreement (SLA) is a binding contract between a service provider and a customer.
+It defines the exact scope of services, expected performance standards (like uptime, durability, latency or availability (in percentile 99.9999999%)), how service is measured, and penalties for failing to meet these targets.
+
+### Distributed Storage Solutions
+
+- Amazon S3
+- Google Cloud Storage
+- Microsoft Azure
+- Hadoop HDFS
+- Consumer oriented storage solutions- Dropbox, Google Drive, iCloud, OneDrive etc
+
+---
+
+# HDFS Architecture
+
+<img src = "./resource/HDFS.png">

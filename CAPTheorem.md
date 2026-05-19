@@ -1,5 +1,11 @@
 # CAP Theorem
 
+A distributed system can guarantee only two out of the following three properties at the same time:
+
+- Consistency
+- Availability
+- Partition Tolerence
+
 ## Consistency
 
 Do I get back what I just wrote immediately?
@@ -31,3 +37,5 @@ Therefore, systems often choose between:
 
 - **CP Systems** → Prioritize Consistency
 - **AP Systems** → Prioritize Availability
+
+<img src = "./resource/CAP.png" style = "width: 60%;">

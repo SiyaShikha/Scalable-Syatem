@@ -1,5 +1,10 @@
 # Acid Properties
 
+- Atomicity
+- Consistency
+- Isolation
+- Durability
+
 ## Atomicity
 
 Either the entire transaction succeeds or the entire transaction fails.
